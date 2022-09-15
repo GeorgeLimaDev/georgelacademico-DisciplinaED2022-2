@@ -10,7 +10,7 @@ e) Método __str__(self).
 '
 '''
 
-#Pra que serve esse import?
+#Pra que serve esse import? Segundo a documentação importa o tipo lista.
 from typing import List
 
 #Resposta ao item A do exercício (método construtor):
