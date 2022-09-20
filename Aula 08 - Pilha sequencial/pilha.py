@@ -15,7 +15,7 @@ class pilha:
         return len(self.__dados)
     
     def __len__(self) -> int:
-        return len(self.__dados) #Definição de um método lenght próprio para esta classe.
+        return len(self.__dados) #Definição de um método length próprio para esta classe.
 
     def elemento(self, posicao:int) -> any: #Busca um elemento da pilha a partir de uma posição e exibe seu conteúdo.
         try:
