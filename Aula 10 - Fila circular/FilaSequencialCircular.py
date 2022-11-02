@@ -30,31 +30,53 @@ class Fila:
                 inicio = (inicio + 1) % self.__tamanho
             
             return self.__dados[inicio]
+
         except AssertionError:
             raise FilaException(f'Posição inválida para a fila atual com {self.__tamanho} elementos.')
     
-    def busca (self, conteudo:any)-> int:
-        for i in range (len(self.__dados)):
-            if self.__dados[i] == conteudo:
-                return i+1
-        raise FilaException (f'Valor {conteudo} não está na fila')
+    def busca (self, chave:any)-> int:
+        inicio = self.__frente
+        count = 0
+        for i in range (self.__ocupados):
+            count += 1
+            if self.__dados[inicio] == chave:
+                return count
+            inicio = (inicio + 1)% self.__tamanho
+
+        raise FilaException(f'A chave {chave} não está na fila.')
 
     def enfileira(self, conteudo:any):
-        self.__dados.append(conteudo)
+        if self.estaCheia():
+            raise FilaException (f'Fila cheia. Não é possível a inserção')
+        
+        self.__final = (self.__final + 1) % self.__tamanho
+        self.__dados[self.__final] = conteudo
+        self.__ocupados += 1
     
     def desenfileira(self)-> any:
-        pass
-    '''
         if self.estaVazia():
-            raise FilaException (f'Fila vazia.')
-        return self.__dados.pop()
-    '''
+            raise FilaException (f'Fila vazia. Não é possível a remoção')
+
+            carga = self.__dados[self.__frente]
+            self.__frente = (self.__frente + 1) % self.__tamanho
+            self.__ocupados -= 1
 
     def __str__(self):
-        s = ''
-        for e in self.__dados:
-            s+= f'{e}'
+        s = '[ '
+
+        inicio = self.__frente
+        for i in range (self.__ocupados):
+            s += f'{self.__dados[inicio]}'
+            inicio = (inicio + 1) % self.__ocupados
+        
+        s += ']'
         return s
 
     def esvazia(self):
-        pass
+        self.__ocupados = 0
+        self.__frente = 0
+        self.__final = -1
+        '''
+        while (not self.estaVazia()):
+            self.desenfileira()
+        '''

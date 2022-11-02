@@ -1,4 +1,4 @@
-from FilaSequencialCircular import Fila
+from FilaSequencialCircular import *
 
 fila = Fila(10)
 
@@ -10,13 +10,19 @@ if fila.estaCheia():
 
 print('Tamanho: ', len(fila))
 
-fila.enfileira('Olá, ')
-fila.enfileira('mundo! ')
-fila.enfileira('Meu ')
-fila.enfileira('nome ')
-fila.enfileira('é ')
-fila.enfileira('George.')
+try:
+    for i in range(10):
+        fila.enfileira(f'Aluno{i+1} ')
 
-print(fila) #Enfileirando atrás dos 10 elementos None. Seria interessante ir substituindo eles.
+    print(fila)
 
-#print('Elemento 1: ', fila.elemento(1))
+    print('Busca (aluno5): ', fila.busca('Aluno5 '))
+    print('Elemento 10: ', fila.elemento(10))
+    print()
+
+    fila.esvazia()
+    print(fila)
+    print('Tamanho: ', len(fila))
+
+except FilaException as fe:
+    print(fe)
