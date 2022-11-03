@@ -1,4 +1,5 @@
 from FilaSequencialCircular import *
+#from FilaEncadeada import * (ainda não funcionou)
 
 fila = Fila(10)
 
