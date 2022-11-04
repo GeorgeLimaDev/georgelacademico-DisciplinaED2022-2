@@ -17,6 +17,9 @@ class Pilha:
         self.__start = None #Muda dinamicamente conforme elementos são empilhados.
         self.__tamanho = 0
 
+    def estaVazia(self) -> bool:
+        return self.__start == None
+
     def tamanho(self) ->int:
         #Revisar o motivo desta parte estar comentada:
         '''
