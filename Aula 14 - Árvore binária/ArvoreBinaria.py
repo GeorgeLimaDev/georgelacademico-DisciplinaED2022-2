@@ -1,5 +1,6 @@
 from enum import Enum
 
+#O nó serve para inserir os elementos na árvore. Cada elemento é inserido em um nó.
 class No:
     def __init__(self, carga:any):
         self.carga = carga
@@ -9,6 +10,7 @@ class No:
     def __str__(self):
         return str(self.carga)
 
+#Classe criada para poder percorrer a árvore a partir das duas opções abaixo:
 class Origem(Enum):
     RAIZ = 1
     CURSOR = 2
