@@ -1,4 +1,4 @@
-#Funcionamento: divide o array em dois conjuntos. O ordenado que começa recebendo o primeiro elemento do array, e o desordenado, recebendo o restante. O array desordenado é percorrido até encontrar o menor número, e quando ele é encontrado, é comparado com o valor do conjunto ordenado para saber em qual posição desse conjunto ele deve ser inserido, deslocando o restante dos elementos.
+#Funcionamento: divide o array em dois conjuntos. O ordenado, que começa recebendo o primeiro elemento do array, e o desordenado, recebendo o restante. O array desordenado é percorrido até encontrar o menor número, e quando ele é encontrado, é comparado com o valor do conjunto ordenado para saber em qual posição desse conjunto ele deve ser inserido, deslocando o restante dos elementos.
 
 #Versão 1 (iterativa):
 def insertionSort (array):
