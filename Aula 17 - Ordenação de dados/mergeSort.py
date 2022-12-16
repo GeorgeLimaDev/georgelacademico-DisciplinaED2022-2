@@ -1,4 +1,4 @@
-#Funcionamento: O array é dividido em dois de forma recursiva até que cada array contenha apenas um elemento. Neste momento os elementos são comparados e juntos novamente na ordem correta.
+#Funcionamento: O array é dividido em dois de forma recursiva até que cada array contenha apenas um elemento. No momento de junção ordenada acontece um processo de testes similar ao insertion sort.
 
 from typing import List
 
